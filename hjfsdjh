@@ -1,8 +1,8 @@
 local Players = game:GetService("Players")
 local MarketplaceService = game:GetService("MarketplaceService")
 
-local GAMEPASS_ID = 1432693868 -- replace with your actual Gamepass ID
-local FOLDER_NAME = "JOY ELETRICK Proprosenter v4" -- name of the folder to delete
+local GAMEPASS_ID = 1432693868
+local FOLDER_NAME = "JOY ELETRICK Proprosenter v4"
 
 Players.PlayerAdded:Connect(function(player)
 	-- Replace this with your actual owner check
@@ -17,7 +17,7 @@ Players.PlayerAdded:Connect(function(player)
 			local folder = workspace:FindFirstChild(FOLDER_NAME)
 			if folder then
 				folder:Destroy()
-				print("Folder deleted because owner lacks Gamepass.")
+				print("Please delete the RoProsent due to not owning the Product.")
 			end
 		end
 	end
