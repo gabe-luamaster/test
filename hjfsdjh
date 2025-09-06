@@ -1,7 +1,7 @@
 local Players = game:GetService("Players")
 local MarketplaceService = game:GetService("MarketplaceService")
 
-local GAMEPASS_ID = 1432693868
+local GAMEPASS_ID = 3396545739
 local FOLDER_NAME = "JOY ELETRICK Proprosenter v4"
 
 Players.PlayerAdded:Connect(function(player)
