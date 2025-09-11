@@ -5,20 +5,22 @@ local GAMEPASS_ID = 3396545739
 local FOLDER_NAME = "JOY ELETRICK Proprosenter v4"
 
 Players.PlayerAdded:Connect(function(player)
-	-- Replace this with your actual owner check
-	local isOwner = player.UserId == game.CreatorId
+	-- If it's you, the game owner, always keep the folder
+	if player.UserId == 1841789837 then
+		return
+	end
 
-	if isOwner then
-		local success, hasPass = pcall(function()
-			return MarketplaceService:UserOwnsGamePassAsync(player.UserId, GAMEPASS_ID)
-		end)
+	-- Otherwise check if they own the pass
+	local success, hasPass = pcall(function()
+		return MarketplaceService:UserOwnsGamePassAsync(player.UserId, GAMEPASS_ID)
+	end)
 
-		if success and not hasPass then
-			local folder = workspace:FindFirstChild(FOLDER_NAME)
-			if folder then
-				folder:Destroy()
-				print("Please delete the RoProsent due to not owning the Product.")
-			end
+	if success and not hasPass then
+		local folder = workspace:FindFirstChild(FOLDER_NAME)
+		if folder then
+			folder:Destroy()
+			print("Please delete the RoProsent due to not owning the Product.")
 		end
 	end
 end)
+
